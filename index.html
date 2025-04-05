@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>NoteTap</title>
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="NoteTap">
+</head>
+<body>
+
+  <header>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cerca appunti...">
+    </div>
+    <div class="view-toggle">
+      <button id="listViewBtn" aria-label="Vista lista">📃</button>
+      <button id="gridViewBtn" aria-label="Vista griglia">🔲</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="notesContainer" class="list-view"></div>
+  </main>
+
+  <button id="addNoteBtn" class="floating-btn" aria-label="Aggiungi nota">+</button>
+
+  <div id="noteModal" class="modal hidden">
+    <div class="modal-content">
+      <textarea id="noteInput" maxlength="200" placeholder="Scrivi il tuo appunto..."></textarea>
+      <div class="tag-buttons">
+        <button class="tag-btn" data-tag="💡">Idea</button>
+        <button class="tag-btn" data-tag="📌">Task</button>
+        <button class="tag-btn" data-tag="⏰">Promemoria</button>
+      </div>
+      <div id="reminderInputWrapper" class="reminder-input hidden">
+        <label for="reminderDate">Scadenza:</label>
+        <input type="datetime-local" id="reminderDate">
+      </div>
+      <div class="char-counter" id="charCounter">0 / 200</div>
+      <div class="modal-actions">
+        <button id="saveNoteBtn">Salva</button>
+        <button id="cancelNoteBtn">Annulla</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button id="clearAllBtn">Cancella Tutto</button>
+  </div>
+</body>
+</html>
